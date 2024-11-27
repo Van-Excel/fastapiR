@@ -119,7 +119,7 @@ async def get_specific_product(id: str, db= Depends(get_db)):
             
     except Exception as e:
         print("Error occurred:", e)
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Resource not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Resource with id of {id} not found")
 
 
 # retrieve a specific post
@@ -136,11 +136,12 @@ async def get_specific_product(id: str, db= Depends(get_db)):
             
     except Exception as e:
         print("Error occurred:", e)
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Resource not found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Resource with id of {id} not found")
 
 
 
-
+# work on delete and update
+# more research on error handling and response messages
 @app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT, tags=["Post"])
 async def delete_post(id: str):
     global data
