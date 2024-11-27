@@ -1,6 +1,7 @@
 #project
 app/config/settings.py
 app/schema/__pycache__
+response.json
 
 
 # Byte-compiled / optimized / DLL files
